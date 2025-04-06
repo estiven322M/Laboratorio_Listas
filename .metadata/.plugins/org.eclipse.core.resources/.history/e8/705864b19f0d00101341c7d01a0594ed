@@ -1,0 +1,12 @@
+package Ejercicio3;
+
+import PrincipalPackage.SingleLinkedList;
+
+
+
+public class SimpleList extends SingleLinkedList<Integer> {
+	
+	
+
+
+}

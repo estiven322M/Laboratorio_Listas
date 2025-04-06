@@ -1,0 +1,6 @@
+
+public class SimpleList5 extends SingleLinkedList<Integer>{
+	
+	
+
+}

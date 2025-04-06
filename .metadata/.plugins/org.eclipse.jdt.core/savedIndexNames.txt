@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+/home/user/Escritorio/Estructuras de Datos/Codigos_Talleres/Laboratorio Listas Enlazadas/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+599180967.index
+2785848276.index

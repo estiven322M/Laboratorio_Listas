@@ -1,0 +1,43 @@
+package Ejercicio2;
+
+
+
+public class Prueba {
+	
+	public static void main(String[] args) {
+		
+		SimpleLinkedList<Persona> personas = new SimpleLinkedList<>();
+
+		Persona persona1= new Persona("James",482736);
+		Persona persona2= new Persona("Emma",905412);
+		Persona persona3= new Persona("William",12867458);
+		Persona persona4= new Persona("Olivia", 764822);
+		Persona persona5= new Persona("Benjamin", 302814);
+		Persona persona6= new Persona("Sophia", 56789012);
+		Persona persona7= new Persona("Henry",73891 );
+		Persona persona8= new Persona("Charlotte", 5201);
+		Persona persona9= new Persona("Alexander",9876543 );
+		Persona persona10= new Persona("Amelia", 13579);
+		
+		// Insertar las personas en la lista
+        personas.insertAtEnd(persona1);
+        personas.insertAtEnd(persona2);
+        personas.insertAtEnd(persona3);
+        personas.insertAtEnd(persona4);
+        personas.insertAtEnd(persona5);
+        personas.insertAtEnd(persona6);
+        personas.insertAtEnd(persona7);
+        personas.insertAtEnd(persona8);
+        personas.insertAtEnd(persona9);
+        personas.insertAtEnd(persona10);
+        
+        // Imprimir la lista de personas
+        System.out.println("Lista de personas:");
+        personas.printList();
+	}
+	
+	
+	
+	
+
+}

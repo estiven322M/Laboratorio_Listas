@@ -1,0 +1,7 @@
+package Ejercicio5;
+
+public class SimpleList5 extends SingleLinkedList<Integer>{
+	
+	
+
+}

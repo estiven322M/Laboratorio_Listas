@@ -1,0 +1,27 @@
+package Ejercicio5;
+
+import PrincipalPackage.SingleLinkedList;
+
+public class SimpleList5 extends SingleLinkedList<Integer> {
+
+	public int countRepetition() {
+	    int count = 0;
+	    Node<Integer> current = head;
+
+	    while (current != null) {
+	        Node<Integer> checker = current.next;
+	        while (checker != null) {
+	            if (current.data.equals(checker.data)) {
+	                count++;
+	                
+	            }
+	            checker = checker.next;
+	        }
+	        current = current.next;
+	    }
+
+	    return count;
+	}
+
+
+}

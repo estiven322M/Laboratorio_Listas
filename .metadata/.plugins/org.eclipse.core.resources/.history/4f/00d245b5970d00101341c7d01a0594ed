@@ -1,0 +1,25 @@
+package Ejercicio1;
+
+import PrincipalPackage.SingleLinkedList;
+
+public class SimpleLinkedList extends SingleLinkedList <Integer> {
+	
+	public SingleLinkedList<T> countImparPosition() {
+		SingleLinkedList<T> imparPosition = new SingleLinkedList<>();
+		Node<T> temp = head;
+		int counter = 1;
+		while (temp != null) {
+			if (counter % 2 == 0)
+				imparPosition.insertAtEnd(temp.data);
+
+			temp = temp.next;
+			counter++;
+
+		}
+		return imparPosition;
+
+	}
+
+	
+
+}

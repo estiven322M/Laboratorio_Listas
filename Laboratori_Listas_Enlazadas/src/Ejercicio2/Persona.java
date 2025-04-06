@@ -1,0 +1,42 @@
+package Ejercicio2;
+
+public class Persona {
+	private String nombre;
+	private Integer cedula;
+	
+	public Persona(String nombre, Integer cedula) {
+		this.nombre=nombre;
+		this.cedula=cedula;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(Integer cedula) {
+		this.cedula = cedula;
+	}
+	
+	@Override
+	public String toString() {
+	    return nombre + "  id: " + cedula + "";
+	}
+	
+	public boolean esIdPar() {
+	    int cantidadDigitos = String.valueOf(cedula).length();
+	    return cantidadDigitos % 2 == 0;  // Retorna true si es par, false si es impar
+	}
+
+
+	
+	
+
+}

@@ -1,0 +1,26 @@
+package Ejercicio5;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		SimpleList5 list = new SimpleList5();
+		
+		list.insertAtEnd(23);
+		list.insertAtEnd(12);
+		list.insertAtEnd(2);
+		list.insertAtEnd(12);
+		list.insertAtEnd(25);
+		list.insertAtEnd(11);
+		list.insertAtEnd(23);
+		list.insertAtEnd(12);
+		list.insertAtEnd(23);
+		list.insertAtEnd(11);
+		list.printList();
+		
+		System.out.println("Despues de contar los elementos repetidos");
+		System.out.println("La lista tiene "+list.countNodes()+" nodos");
+		
+	}
+
+}

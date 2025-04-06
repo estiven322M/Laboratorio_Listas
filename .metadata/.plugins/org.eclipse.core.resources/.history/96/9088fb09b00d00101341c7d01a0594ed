@@ -1,0 +1,182 @@
+package PrincipalPackage;
+
+public class DoublyLinkedList <T> {
+	Node<T> head;
+    Node<T> tail;
+	
+	class Node <T>{
+	    T data;
+	    Node <T> next;
+	    Node <T >prev;
+
+	    public Node(T data) {
+	        this.data = data;
+	        this.next = null;
+	        this.prev = null;
+	    }
+	}
+	
+	  public void printList() {
+	        Node<T> temp = head;
+	        while (temp != null) {
+	            System.out.print(temp.data + " ");
+	            temp = temp.next;
+	        }
+	        System.out.println();
+	    }
+	  
+	  public void insertAtBeginning(T data) {
+	        Node <T>newNode = new Node(data);
+	        newNode.next = head;
+
+	        if (head != null) {
+	            head.prev = newNode;
+	        }
+
+	        head = newNode;
+
+	        if (head.next == null) {
+	            tail = newNode;
+	        }
+	    }
+	  
+	  public void insertAtEnd(int data) {
+	        Node <T> newNode = new Node(data);
+
+	        if(head == null) {
+	            head = newNode;  
+	            tail = newNode;
+	        } else {
+	            tail.next = newNode;
+	            newNode.prev = tail;
+	            tail = newNode;
+	        }
+	    }
+	  
+	    public void insertAtPos(T data, int pos) {
+	        if (pos < 1) {
+	            System.out.println("Invalid position.");
+	            return;
+	        }
+
+	        if (pos == 1) {
+	            insertAtBeginning(data);
+	        } else {
+	            Node <T>current = head;
+	            Node <T>newNode = new Node(data);
+	            int currentPos = 1;
+
+	            // Traverse the list to find the node before the desired position.
+	            while (currentPos < pos - 1 && current != null) {
+	                current = current.next;
+	                currentPos++;
+	            }
+
+	            if (current == null) {
+	                System.out.println("Invalid position.");
+	                return;
+	            }
+	            
+	         // Adjust links to insert the new node at the specified position.
+	            newNode.prev = current;
+	            newNode.next = current.next;
+	            if (current.next == null) {
+	                tail = newNode;
+	            } else {
+	                current.next.prev = newNode;
+	            }
+	            current.next = newNode;
+
+	        }
+	    }
+	    
+	    public void deleteAtBeginning() {
+	        head = head.next;
+	        head.prev = null;
+	    }
+	    
+	    public void deleteAtEnd() {
+	        tail = tail.prev;
+	        tail.next = null;
+	    }
+	    
+	    public void deleteAtPos(int pos) {
+	        if (pos < 1) {
+	            System.out.println("Invalid position.");
+	            return;
+	        }
+
+	        if (pos == 1) {
+	            deleteAtBeginning();
+	        } else {
+	            Node <T>current = head;
+	            int currentPos = 1;
+
+	            // Traverse the list to find the node at the desired position.
+	            while (currentPos < pos && current != null) {
+	                current = current.next;
+	                currentPos++;
+	            }
+
+	            if (current == null) {
+	                System.out.println("Invalid position.");
+	                return;
+	            }
+
+	            // Adjust links to delete the node at the specified position.
+	            current.prev.next = current.next;
+	            if (current.next == null) {
+	                tail = current.prev;
+	            } else {
+	                current.next.prev = current.prev;
+	            }
+	        }
+	    }
+	    
+	    public void reversePrint() {
+	        Node <T>current = tail;
+
+	        while (current != null) {
+	            System.out.print(current.data + " ");
+	            current = current.prev;
+	        }
+	        System.out.println();
+	    }
+	    
+	    public Node <T>findNode(T value) {
+	        Node<T> current = head;
+
+	        while (current != null) {
+	            if (current.data == value) {
+	                return current;
+	            }
+	            current = current.next;
+	        }
+
+	        return null; // node not found
+	    }
+	    
+	    public void deleteNode(Node <T> node) {
+	        if (head == null || node == null) return;
+
+	        if (head == tail) {
+	          head = null;
+	          tail = null;
+	          return;
+	        }
+	        
+	        if (head == node) {
+	            deleteAtBeginning();
+	            return;
+	        }
+
+	        if (tail == node) {
+	            deleteAtEnd();
+	            return;
+	        }
+
+	        node.prev.next = node.next;
+	        node.next.prev = node.prev;
+	    }
+
+}
